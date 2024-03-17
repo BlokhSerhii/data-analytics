@@ -72,6 +72,7 @@ img
 .sending-win
     position: relative
     @include alignCenter()
+    width: 100%
     &__sending
         @include alignCenter()
         width: 120px
@@ -230,7 +231,7 @@ img
     background: $activColor
     border-radius: 2px
 .burger span 
-    background: $activColor
+    background: rgb(255, 255, 255)
     border: none
     border-radius: 4px 0px 4px 0px
     height: 3px
@@ -240,9 +241,9 @@ img
     transition: all 0.4s ease
     cursor: pointer
 .burger:hover > span
-    background: $elemColor
+    background: $activColor
 .burger.burger-active:hover > span
-    background: $elemColor
+    background: $activColor
 .burger span:nth-of-type(1) 
     top: 6px
 .burger span:nth-of-type(2) 
@@ -253,7 +254,7 @@ img
     @include alignColumn()
     justify-content: start
     position: fixed
-    background-color: rgb(255, 255, 255)
+    background-color: rgba(24, 25, 32, 1)
     top: 0
     left: 0
     z-index: 400
@@ -266,19 +267,18 @@ img
         @include alignCenter()
         height: 100%
         margin-top: 100px
-        font-size: 16px
         text-transform: uppercase
     &__item
         @include alignCenter()
 .overlay-menu
     list-style: none
     text-align: left
-    margin-left: 20px
     &__item 
         opacity: 0
+        margin: 5px 0px
     &__link
         position: relative
-        font-size: 18px
+        font-size: 20px
         transition: color 0.4s ease
     &__link:hover
         color: $activColor
