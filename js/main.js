@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
       ) {
         currentSectionIndex = index;
       }
+      opacityPage(currentSectionIndex);
     });
 
     menubarLinks.forEach(function(link, index) {
@@ -39,12 +40,31 @@ document.addEventListener("DOMContentLoaded", function() {
         link.classList.add("menubar-active");
       }
     });
+
+    function opacityPage(index) {
+
+      if(index != 0) {
+
+        sections.forEach(function(section, index) {
+          section.classList.remove("pageActive");
+          if (index === currentSectionIndex) {
+            section.classList.add("pageActive");
+          }
+        });
+      }
+      else {
+        sections.forEach(function(section, index) {
+          section.classList.remove("pageActive");
+        });
+      };
+    }
   });
 
   // Обробка переходу по пунктах меню menubar
   menubarLinks.forEach(function(link, index) {
     link.addEventListener("click", function(event) {
 
+      event.preventDefault();
       // Прокручуємо до відповідньої секції
       sections[index].scrollIntoView({ behavior: "smooth" });
 
@@ -60,17 +80,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // обробник перемикача мови
 const toggleLang = document.querySelector('.toggle-lang');
+const thumbLangList = document.querySelector('.select-lang__thumb');
 const langList = document.querySelector('.select-lang__list');
 
 toggleLang.addEventListener('click', function (event) {
 
   event.stopPropagation();
   langList.classList.toggle('lang-list-open');
+  thumbLangList.classList.toggle('activelangThumb');
 });
 
 document.addEventListener('click', function () {
 
   langList.classList.remove('lang-list-open');
+  thumbLangList.classList.remove('activelangThumb');
 });
 // ------------------------------
 

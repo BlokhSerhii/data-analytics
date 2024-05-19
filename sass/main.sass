@@ -200,6 +200,8 @@ img
     display: block
 .hidden-lan
     display: none
+.activelangThumb
+    transform: rotate(0.5turn)
 // burger-----------------
 .burger 
     display: none
@@ -408,6 +410,7 @@ img
 // header------------------------------------------------------------------
 // skills------------------------------------------------------------------
 .skills
+    opacity: 0
     margin-top: 150px
     &__container
         @include alignCenter()
@@ -495,6 +498,7 @@ img
 // skills------------------------------------------------------------------
 // experiences-------------------------------------------------------------
 .experiences
+    opacity: 0
     margin-top: 150px
     &__container
         @include alignCenter()
@@ -572,6 +576,7 @@ img
 // experiences------------------------------------------------------------
 // tools------------------------------------------------------------------
 .tools
+    opacity: 0
     margin-top: 150px
     &__container
         @include alignCenter()
@@ -604,179 +609,180 @@ img
         height: 100%
 // tools------------------------------------------------------------------
 // portfolio--------------------------------------------------------------
-.portfolio 
-    margin-top: 220px
-    &__container
-        @include alignColumn()
-        margin: -20px
-    &__item
-        display: flex
-        justify-content: center
-        width: 100% 
-.project
-    display: flex
-    flex: 0 1 50%
-    margin: 30px 20px
-    align-items: start
-    border-radius: 20px
-    box-shadow: 4px 4px 4px 0px $shadow
-    background-color: $elemColor
-    &__item
-        @include alignColumn()
-        flex: 0 1 50%
-        min-height: 240px
-    &__icon
-        @include alignCenter()
-        flex: 0 1 50%
-        min-height: 240px
-        width: 100%
-        border-radius: 20px 0px 0px 20px
-    &__desc
-        display: flex
-        flex-direction: column
-        height: 100%
-        margin: 30px 25px
-        &_text
-            margin: 10px 0px
-            font-size: 12px
-        &_title
-            text-align: left
-            font-family: RobotoMedium
-            font-size: 24px
-            line-height: 110%
-            color: $activColor
-    &__btn
-        @include alignCenter()
-        width: 100px
-        padding: 10px
-        font-family: RobotoMedium
-        font-size: 14px
-        text-transform: uppercase
-        color: rgb(255, 255, 255)
-        border-radius: 10px
-        background: $activColor
-        cursor: pointer
-        transition: background 0.5s ease
-    &__btn:hover
-        box-shadow: 1px 2px 4px 2px $shadow
-        background: $elemColor
-.project-info
-    display: none
-.project-1
-    background: url('../img/projects/project-1/studProf-photo.jpg') no-repeat center center
-    background-size: contain
-.project-2
-    background: url('../img/projects/project-2/re-energize-photo.jpg') no-repeat center center
-    background-size: contain
-.project-3
-    background: url('../img/projects/project-3/re-energize-photo.jpg') no-repeat center center
-    background-size: contain
-.project-4
-    background: url('../img/projects/project-4/influencers-photo.jpg') no-repeat center center
-    background-size: contain
-.project-5
-    background: url('../img/projects/project-5/influencers-photo.jpg') no-repeat center center
-    background-size: contain
+// .portfolio 
+//     margin-top: 220px
+//     &__container
+//         @include alignColumn()
+//         margin: -20px
+//     &__item
+//         display: flex
+//         justify-content: center
+//         width: 100% 
+// .project
+//     display: flex
+//     flex: 0 1 50%
+//     margin: 30px 20px
+//     align-items: start
+//     border-radius: 20px
+//     box-shadow: 4px 4px 4px 0px $shadow
+//     background-color: $elemColor
+//     &__item
+//         @include alignColumn()
+//         flex: 0 1 50%
+//         min-height: 240px
+//     &__icon
+//         @include alignCenter()
+//         flex: 0 1 50%
+//         min-height: 240px
+//         width: 100%
+//         border-radius: 20px 0px 0px 20px
+//     &__desc
+//         display: flex
+//         flex-direction: column
+//         height: 100%
+//         margin: 30px 25px
+//         &_text
+//             margin: 10px 0px
+//             font-size: 12px
+//         &_title
+//             text-align: left
+//             font-family: RobotoMedium
+//             font-size: 24px
+//             line-height: 110%
+//             color: $activColor
+//     &__btn
+//         @include alignCenter()
+//         width: 100px
+//         padding: 10px
+//         font-family: RobotoMedium
+//         font-size: 14px
+//         text-transform: uppercase
+//         color: rgb(255, 255, 255)
+//         border-radius: 10px
+//         background: $activColor
+//         cursor: pointer
+//         transition: background 0.5s ease
+//     &__btn:hover
+//         box-shadow: 1px 2px 4px 2px $shadow
+//         background: $elemColor
+// .project-info
+//     display: none
+// .project-1
+//     background: url('../img/projects/project-1/studProf-photo.jpg') no-repeat center center
+//     background-size: contain
+// .project-2
+//     background: url('../img/projects/project-2/re-energize-photo.jpg') no-repeat center center
+//     background-size: contain
+// .project-3
+//     background: url('../img/projects/project-3/re-energize-photo.jpg') no-repeat center center
+//     background-size: contain
+// .project-4
+//     background: url('../img/projects/project-4/influencers-photo.jpg') no-repeat center center
+//     background-size: contain
+// .project-5
+//     background: url('../img/projects/project-5/influencers-photo.jpg') no-repeat center center
+//     background-size: contain
 // portfolio--------------------------------------------------------------
 // reviews----------------------------------------------------------------
-.reviews
-    margin-top: 200px
-    &__container
-        @include alignColumn()
-        width: 100%
-    &__item
-        display: flex
-        flex-direction: column
-        width: 80%
-        margin: 0px auto
-    &__title
-        font-family: RobotoMedium
-        font-size: 40px
-        margin: 0px auto
-        text-transform: uppercase
-        text-align: center
-        color: $activColor
-.reviews-data
-    display: none
-.slider
-    margin-top: 100px
-    &__controls
-        @include alignCenter()
-    &__container
-        display: flex
-        justify-content: center
-        width: 100%
-.slider-controls
-    display: none
-    margin-top: 50px
-    &__btn
-        display: flex
-        align-items: center
-        width: 20px
-        height: 20px
-        margin: 30px
-        padding: 4px
-        background: #ffffff00
-        border: none
-        cursor: pointer
-    &__btn:hover
-        width: 24px
-        margin: 0px 28px
-    &__indicators
-        @include alignCenter()
-    &__indicator
-        width: 10px
-        height: 10px
-        margin: 6px
-        border-radius: 50%
-        background: rgb(255, 255, 255)
-    &__indicator.active
-        width: 12px
-        height: 12px
-        margin: 4px
-        background: $activColor
-.slide
-    position: relative
-    display: flex
-    flex-direction: column
-    &__content
-        z-index: 100
-        display: flex
-        flex-direction: column
-        align-items: center
-        height: 400px
-        margin: 0px 20%
-        padding: 20px 30px
-        border-radius: 20px
-        box-shadow: 10px 10px 10px $shadow
-        background: rgb(255, 255, 255)
-    &__caption
-        @include alignCenter()
-        margin: 30px 0px
-    &__title
-        margin: 0px 20px
-    &__avatar
-        @include alignCenter()
-        width: 150px
-        border-radius: 50%
-        box-shadow: 1px 2px 2px 0px $shadow
-    &__name
-        font-family: RobotoMedium
-        font-size: 24px
-        color: rgb(0, 0, 0)
-    &__profession
-        font-size: 18px
-        color: rgb(0, 0, 0)
-    &__text
-        text-align: left
-        margin-top: 20px
-        font-family: RobotoMedium
-        font-size: 18px
-        color: rgb(0, 0, 0)
-        line-height: 110%
+// .reviews
+//     margin-top: 200px
+//     &__container
+//         @include alignColumn()
+//         width: 100%
+//     &__item
+//         display: flex
+//         flex-direction: column
+//         width: 80%
+//         margin: 0px auto
+//     &__title
+//         font-family: RobotoMedium
+//         font-size: 40px
+//         margin: 0px auto
+//         text-transform: uppercase
+//         text-align: center
+//         color: $activColor
+// .reviews-data
+//     display: none
+// .slider
+//     margin-top: 100px
+//     &__controls
+//         @include alignCenter()
+//     &__container
+//         display: flex
+//         justify-content: center
+//         width: 100%
+// .slider-controls
+//     display: none
+//     margin-top: 50px
+//     &__btn
+//         display: flex
+//         align-items: center
+//         width: 20px
+//         height: 20px
+//         margin: 30px
+//         padding: 4px
+//         background: #ffffff00
+//         border: none
+//         cursor: pointer
+//     &__btn:hover
+//         width: 24px
+//         margin: 0px 28px
+//     &__indicators
+//         @include alignCenter()
+//     &__indicator
+//         width: 10px
+//         height: 10px
+//         margin: 6px
+//         border-radius: 50%
+//         background: rgb(255, 255, 255)
+//     &__indicator.active
+//         width: 12px
+//         height: 12px
+//         margin: 4px
+//         background: $activColor
+// .slide
+//     position: relative
+//     display: flex
+//     flex-direction: column
+//     &__content
+//         z-index: 100
+//         display: flex
+//         flex-direction: column
+//         align-items: center
+//         height: 400px
+//         margin: 0px 20%
+//         padding: 20px 30px
+//         border-radius: 20px
+//         box-shadow: 10px 10px 10px $shadow
+//         background: rgb(255, 255, 255)
+//     &__caption
+//         @include alignCenter()
+//         margin: 30px 0px
+//     &__title
+//         margin: 0px 20px
+//     &__avatar
+//         @include alignCenter()
+//         width: 150px
+//         border-radius: 50%
+//         box-shadow: 1px 2px 2px 0px $shadow
+//     &__name
+//         font-family: RobotoMedium
+//         font-size: 24px
+//         color: rgb(0, 0, 0)
+//     &__profession
+//         font-size: 18px
+//         color: rgb(0, 0, 0)
+//     &__text
+//         text-align: left
+//         margin-top: 20px
+//         font-family: RobotoMedium
+//         font-size: 18px
+//         color: rgb(0, 0, 0)
+//         line-height: 110%
 // reviews----------------------------------------------------------------
 // contacts---------------------------------------------------------------
 .contacts
+    opacity: 0
     margin-top: 200px
     &__container
         @include alignCenter()
@@ -960,6 +966,10 @@ img
     font-size: 18px
     color: rgb(255, 255, 255)
 // footer------------------------------------------------------------------
+
+.pageActive
+    opacity: 1
+    transition: 1.2s ease
 
 @media (max-width: 1500px) 
     .inner

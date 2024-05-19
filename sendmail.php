@@ -10,9 +10,9 @@
     $mail->setLanguage('ru', 'phpmailer/language');
     $mail->isHTML(true);
 
-    $mail->setFrom('no-reply@friendlyvolunteering.com.ua','Friendly volunteering');
+    $mail->setFrom('no-reply@openanalytics.com.ua','Data analyst');
     $mail->addAddress('kozlovvladyslavanalytics@gmail.com');
-    $mail->Subject = 'Friendly volunteering!';
+    $mail->Subject = 'Data analyst!';
 
     $body = '<h1>Повідомлення з сайту!</h1>';
 
