@@ -52,6 +52,39 @@ img {
   margin: 0px 150px;
 }
 
+.progress-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.progress-circle {
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+circle {
+  fill: none;
+  stroke-width: 5;
+}
+
+.progress {
+  stroke: rgb(253, 144, 49);
+  stroke-linecap: round;
+}
+
+.progress-text {
+  position: absolute;
+}
+
 .modal {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -886,22 +919,6 @@ img {
 .skill-card__desc {
   font-size: 20px;
 }
-.skill-card__circule {
-  margin: 0px auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 90px;
-  height: 90px;
-  border: 4px dashed rgb(253, 144, 49);
-  border-radius: 50%;
-}
 .skill-card__item {
   width: 100%;
   -webkit-box-sizing: border-box;
@@ -911,21 +928,9 @@ img {
 }
 .skill-card__progress {
   height: 7px;
+  width: 0px;
   border-radius: 4px;
   background-color: rgb(253, 144, 49);
-}
-
-.product,
-.order,
-.sales,
-.bpa,
-.spth,
-.kpi,
-.ffp,
-.python,
-.sql,
-.r {
-  width: 70%;
 }
 
 .skill-card-circule {
@@ -1208,14 +1213,19 @@ img {
   margin-bottom: 5px;
 }
 .tool-card__desc {
+  position: relative;
   margin: 10px;
   font-family: RobotoMedium;
   font-size: 20px;
 }
-.tool-card__circule {
+.tool-card__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1223,11 +1233,6 @@ img {
       -ms-flex-align: center;
           align-items: center;
   margin: 0px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100px;
-  height: 100px;
 }
 .tool-card__circule img {
   width: 100%;

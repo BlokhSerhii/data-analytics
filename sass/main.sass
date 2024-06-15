@@ -24,6 +24,23 @@ img
     margin: 0px auto
 .inner
     margin: 0px 150px
+
+.progress-container
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+.progress-circle
+    transform: rotate(-90deg)
+circle 
+    fill: none
+    stroke-width: 5
+.progress 
+    stroke: rgb(253, 144, 49)
+    stroke-linecap: round
+.progress-text 
+    position: absolute
+
 // modal-----------------
 .modal 
     display: flex
@@ -452,13 +469,6 @@ img
         font-size: 20px 
     &__desc
         font-size: 20px   
-    &__circule
-        margin: 0px auto
-        @include alignCenter()
-        width: 90px
-        height: 90px
-        border: 4px dashed $activColor
-        border-radius: 50%
     &__item
         width: 100%
         box-sizing: border-box
@@ -466,19 +476,10 @@ img
         background-color: rgb(255, 255, 255)
     &__progress
         height: 7px
+        width: 0px
         border-radius: 4px
         background-color: $activColor
-.product,
-.order,
-.sales,
-.bpa,
-.spth,
-.kpi,
-.ffp,
-.python,
-.sql,
-.r
-    width: 70%
+
 .skill-card-circule
     @include alignColumn()
     min-width: 33%
@@ -595,15 +596,13 @@ img
         margin: 10px
         margin-bottom: 5px
     &__desc
+        position: relative
         margin: 10px
         font-family: RobotoMedium
         font-size: 20px   
-    &__circule
-        @include alignCenter()
+    &__container
+        @include alignColumn()
         margin: 0px auto
-        @include alignCenter()
-        width: 100px
-        height: 100px
     &__circule img
         width: 100%
         height: 100%

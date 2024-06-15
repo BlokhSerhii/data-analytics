@@ -234,3 +234,85 @@ document.addEventListener('DOMContentLoaded', function () {
   })
 })
 // ------------------------------
+
+// обробка заповнення полів навичок
+document.addEventListener("DOMContentLoaded", function() {
+  const skillsItems = document.querySelectorAll(".skills__item");
+
+  skillsItems.forEach(function(skillsItem) {
+    const progressBarElements = skillsItem.querySelectorAll(".skill-card__progress");
+    let isAnimationStarted = false;
+
+    document.addEventListener("scroll", function() {
+      const rect = skillsItem.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+
+      if (isVisible && !isAnimationStarted) {
+        progressBarElements.forEach(function(progressBar) {
+          const targetWidth = parseInt(progressBar.getAttribute("data-progress"));
+          animateProgressBar(progressBar, targetWidth);
+        });
+        isAnimationStarted = true;
+      }
+    });
+  });
+});
+
+function animateProgressBar(progressBar, targetWidth) {
+  let currentWidth = 0;
+  const animationDuration = 1700; // час анімації в мілісекундах
+
+  const increment = targetWidth / animationDuration * 10; // кількість одиниць збільшення на кожні 10 мілісекунд
+
+  const intervalId = setInterval(function() {
+    currentWidth += increment;
+    progressBar.style.width = currentWidth + "%";
+    
+    if (currentWidth >= targetWidth) {
+      clearInterval(intervalId);
+    }
+  }, 10);
+}
+// ------------------------------
+
+// обробка заповнення кругових прогресбарів полів
+document.addEventListener('DOMContentLoaded', () => {
+  const progressBars = document.querySelectorAll('.progress-container');
+
+  function animateProgressBar(progressBar) {
+      let progress = 0;
+      const progressText = progressBar.querySelector('.progress-text');
+      const targetProgress = parseInt(progressText.getAttribute('value'));
+      const progressCircle = progressBar.querySelector('.progress');
+      const circleLength = 315;
+
+      function updateProgress() {
+          if (progress <= targetProgress) {
+              progressText.innerText = `${progress}%`;
+              const offset = circleLength - (progress / 100 * circleLength);
+              progressCircle.style.strokeDashoffset = `${offset}`;
+              progress++;
+              requestAnimationFrame(updateProgress);
+          }
+      }
+
+      updateProgress();
+  }
+
+  progressBars.forEach(function(progressBar) {
+
+    let isAnimationStarted = false;
+
+    document.addEventListener("scroll", function() {
+      const rect = progressBar.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+
+      if (isVisible && !isAnimationStarted) {
+        animateProgressBar(progressBar);
+        isAnimationStarted = true;
+      }
+    });
+  });
+});
+// ------------------------------
+
